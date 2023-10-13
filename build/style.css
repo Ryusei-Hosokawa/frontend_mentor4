@@ -3,15 +3,24 @@
   font-family: "Kumbh Sans"; /* フォント名 */
   src: url("./fonts/KumbhSans-VariableFont_YOPQ,wght.ttf") format("woff");
 }
+body {
+  padding: 0 15px 0;
+}
+
 .base__board {
   position: relative;
   width: 100%;
   max-width: 1440px;
   margin: 200px auto;
-  padding: 173px 0;
+  padding: 173px 15px;
   background: #19a1ae;
   border-radius: 20px;
   overflow: hidden;
+}
+@media screen and (max-width: 767px) {
+  .base__board {
+    padding: 147px 24px;
+  }
 }
 .base__board::before {
   content: "";
@@ -19,10 +28,17 @@
   top: 0;
   left: 0;
   transform: translate(-27%, -51%);
-  width: 978px;
-  height: 978px;
+  width: max(700px, 67.917vw);
+  height: max(700px, 67.917vw);
   background-image: linear-gradient(0deg, rgba(9, 137, 180, 0.1), rgb(83, 255, 238));
   border-radius: 50%;
+}
+@media screen and (max-width: 767px) {
+  .base__board::before {
+    width: 622px;
+    height: 622px;
+    transform: translate(-67%, -60%);
+  }
 }
 .base__board::after {
   content: "";
@@ -31,10 +47,17 @@
   right: 0;
   z-index: 0;
   transform: translate(24%, 60%);
-  width: 978px;
-  height: 978px;
+  width: max(700px, 67.917vw);
+  height: max(700px, 67.917vw);
   background-image: linear-gradient(-175deg, rgba(9, 137, 180, 0.1), rgb(83, 255, 238));
   border-radius: 50%;
+}
+@media screen and (max-width: 767px) {
+  .base__board::after {
+    width: 622px;
+    height: 622px;
+    transform: translate(70%, 50%);
+  }
 }
 .base__board .main__card {
   position: relative;
@@ -51,6 +74,11 @@
 .base__board .main__card .card__img {
   width: 100%;
   height: 149px;
+}
+@media screen and (max-width: 767px) {
+  .base__board .main__card .card__img {
+    height: 140px;
+  }
 }
 .base__board .main__card .card__img img {
   width: 100%;
